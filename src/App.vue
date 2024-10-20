@@ -6,6 +6,7 @@ import {
   Location,
   Setting,
 } from '@element-plus/icons-vue'
+import HelloWorld from 'RemoteComponents/HelloWorld'
 
 const isCollapse = ref(false)
 const handleOpen = (key: string, keyPath: string[]) => {
@@ -18,6 +19,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <template>
   <div style="background: #ccc; height: 48px">GlobalHeader</div>
+  <HelloWorld :msg="'msg from main app'" />
   <div class="container">
     <div class="menu-wrap">
       <el-button type="primary" @click="isCollapse = !isCollapse">{{
@@ -33,7 +35,7 @@ const handleClose = (key: string, keyPath: string[]) => {
         <el-sub-menu index="1">
           <template #title>
             <el-icon><location /></el-icon>
-            <span>Navigator One</span>
+            <span>Navigator Two</span>
           </template>
 
           <el-menu-item index="1-1">item one</el-menu-item>

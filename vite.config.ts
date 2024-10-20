@@ -9,11 +9,11 @@ export default defineConfig({
   plugins: [
     vue(),
     federation({
-      name: 'remote-app',
+      name: 'host-app',
       filename: 'remoteEntry.js',
       // Modules to expose
-      exposes: {
-        './HelloWorld': './src/components/HelloWorld.vue',
+      remotes: {
+        RemoteComponents: 'http://localhost:4173/assets/remoteEntry.js',
       },
       shared: ['vue'],
     }),
